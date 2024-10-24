@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Local Strage Command Line</title>
+<style>
+  body {
+    font-family: sans-serif;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<body style="background-image: url('images/background.jpg');  background-repeat: no-repeat; background-size: cover;"> 
+
+<h1>Local Strage Command Line</h1>
+
+<label for="data">データを入力:</label>
+<input type="text" id="data">
+
+<button onclick="saveData()">保存</button>
+<button onclick="loadData()">読み込み</button>
+
+<div id="output"></div>
+
+<label for="command">コマンドを入力:</label>
+<input type="text" id="command">
+<button onclick="executeCommand()">送信</button>
+
+<script>
+    function executeCommand() {
+      // TODO: 入力されたコマンドを実行する処理をここに記述
+      const command = document.getElementById('command').value;
+      console.log('実行するコマンド:', command); 
+      document.getElementById('output').innerText = 'データを保存しました: ' + data;
+      saveDataCommand();
+    }
+
+function saveData() {
+  const data = document.getElementById('data').value;
+  localStorage.setItem('myData', data);
+  document.getElementById('output').innerText = 'データを保存しました: ' + data;
+}
+
+function loadData() {
+  const loadedData = localStorage.getItem('myData');
+  document.getElementById('output').innerText = '読み込んだデータ: ' + loadedData;
+}
+
+//これ俺の処理
+function saveDataCommand() {
+    const data = document.getElementById('command').value;
+    localStorage.setItem('myData', data);
+    document.getElementById('output').innerText = 'データを保存しました: ' + data;
+    localStorage.setItem('myData', data);
+  }
+
+</script>
+
+
+</body>
+</html>
