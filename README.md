@@ -1,0 +1,2 @@
+# local_strage_command_line
+ローカルストレージに気軽に読み書きするためのソース
